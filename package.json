@@ -1,0 +1,23 @@
+{
+  "name": "e2e-docker-image",
+  "version": "3.0.0",
+  "description": "Image to run e2e tests in",
+  "main": "index.js",
+  "config": {
+    "imagename": "suitespot/e2e"
+  },
+  "scripts": {
+    "dockerize": "docker build -t $npm_package_config_imagename:$npm_package_version .",
+    "docker:run": "docker run --rm -it $npm_package_config_imagename:$npm_package_version /bin/bash",
+    "docker:push": "docker push $npm_package_config_imagename:$npm_package_version",
+    "docker:push:latest": "echo \"docker push $npm_package_config_imagename:latest\" && docker push $npm_package_config_imagename:latest",
+    "docker:tag:latest": "docker tag $npm_package_config_imagename:$npm_package_version $npm_package_config_imagename:latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/suitespottech/e2e-docker-image.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/suitespottech/e2e-docker-image#readme"
+}
