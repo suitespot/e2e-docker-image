@@ -1,4 +1,4 @@
-FROM ubuntu:bionic-20181112
+FROM ubuntu:bionic-20221215
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
