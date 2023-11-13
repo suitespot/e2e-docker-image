@@ -1,4 +1,4 @@
-FROM ubuntu:bionic-20221215
+FROM ubuntu:jammy-20231004
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
@@ -7,7 +7,7 @@ RUN apt-get update && \
   apt-get install -y curl wget default-jre gnupg lsb-release
 
 # Install Node
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 RUN node --version && npm --version
 
