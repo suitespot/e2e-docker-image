@@ -12,7 +12,7 @@ RUN apt-get install -y nodejs
 RUN node --version && npm --version
 
 # Install MongoDB
-RUN apt-get install libcurl4 openssl liblzma5 libssl-dev
+RUN apt-get install -y libcurl4 openssl liblzma5 libssl-dev
 ENV MONGO_VERSION="6.0.11" 
 ENV PLATFORM="ubuntu1804"
 ENV MONGO_DIR="mongodb-linux-x86_64-${PLATFORM}-${MONGO_VERSION}"
