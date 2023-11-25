@@ -21,5 +21,7 @@ RUN curl -o ./mongosh.deb -L ${MONGOSH_DL_URL} && \
   sudo dpkg -i ./mongosh.deb && \
   rm ./mongosh.deb
 
+COPY ./install-chrome /usr/bin/install-chrome
+
 # Remove apt cache
 RUN sudo rm -rf /var/lib/apt/lists/*
