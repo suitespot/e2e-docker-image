@@ -2,7 +2,7 @@ FROM --platform=linux/amd64 cimg/node:16.20.2-browsers
 
 # Base tools & JRE
 RUN sudo apt-get update && \
-  sudo apt-get install -y curl wget default-jre gnupg lsb-release gnupg2 ca-certificates jq ripgrep
+  sudo apt-get install -y curl wget default-jre gnupg lsb-release gnupg2 ca-certificates jq ripgrep moreutils 
 # Dependencies for Chrome 
 RUN sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
