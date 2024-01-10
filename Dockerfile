@@ -12,7 +12,7 @@ RUN apt-get install -y nodejs
 RUN node --version && npm --version
 
 # Install MongoDB
-RUN apt-get install libcurl4 libgssapi-krb5-2 libldap-2.5-0 libwrap0 libsasl2-2 libsasl2-modules libsasl2-modules-gssapi-mit snmp openssl liblzma5
+RUN apt-get install -y libcurl4 libgssapi-krb5-2 libldap-2.5-0 libwrap0 libsasl2-2 libsasl2-modules libsasl2-modules-gssapi-mit snmp openssl liblzma5
 ENV MONGO_VERSION="6.0.12" 
 ENV PLATFORM="ubuntu2204"
 ENV MONGO_DIR="mongodb-linux-x86_64-${PLATFORM}-${MONGO_VERSION}"
