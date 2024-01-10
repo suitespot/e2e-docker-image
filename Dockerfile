@@ -4,7 +4,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Base tools & JRE
 RUN apt-get update && \
-  apt-get install -y curl wget default-jre gnupg lsb-release
+  apt-get install -y curl wget default-jre gnupg lsb-release jq ripgrep moreutils
 
 # Install Node
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
