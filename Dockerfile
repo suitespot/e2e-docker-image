@@ -22,5 +22,11 @@ RUN wget https://fastdl.mongodb.org/linux/${MONGO_TGZ} && \
   rm ${MONGO_TGZ} && \
   cp ${MONGO_DIR}/bin/* /usr/bin
 
+# Install mongosh
+ENV MONGOSH_DL_URL="https://downloads.mongodb.com/compass/mongodb-mongosh_2.1.1_amd64.deb"
+RUN curl -o ./mongosh.deb -L ${MONGOSH_DL_URL} && \
+  dpkg -i ./mongosh.deb && \
+  rm ./mongosh.deb
+
 # Remove apt cache
 RUN rm -rf /var/lib/apt/lists/*
