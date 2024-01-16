@@ -11,17 +11,6 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 RUN node --version && npm --version
 
-# Install MongoDB
-RUN apt-get install -y libcurl4 libgssapi-krb5-2 libldap-2.5-0 libwrap0 libsasl2-2 libsasl2-modules libsasl2-modules-gssapi-mit snmp openssl liblzma5
-ENV MONGO_VERSION="6.0.12" 
-ENV PLATFORM="ubuntu2204"
-ENV MONGO_DIR="mongodb-linux-x86_64-${PLATFORM}-${MONGO_VERSION}"
-ENV MONGO_TGZ="${MONGO_DIR}.tgz"
-RUN wget https://fastdl.mongodb.org/linux/${MONGO_TGZ} && \
-  tar -zxvf ${MONGO_TGZ} && \
-  rm ${MONGO_TGZ} && \
-  cp ${MONGO_DIR}/bin/* /usr/bin
-
 # Install mongosh
 ENV MONGOSH_DL_URL="https://downloads.mongodb.com/compass/mongodb-mongosh_2.1.1_amd64.deb"
 RUN curl -o ./mongosh.deb -L ${MONGOSH_DL_URL} && \
